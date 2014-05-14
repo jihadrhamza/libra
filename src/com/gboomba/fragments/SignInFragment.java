@@ -19,7 +19,7 @@ public class SignInFragment extends Fragment implements SignUpOperationListener 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_signin, container, false);
-		triggerSignUpService();
+		//triggerSignUpService();
 		return view;
 	}
 
