@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="body_bg_color">#ECEBF2</color>
+    <color name="signinbtn_color">#2ABBFE</color>
+    <color name="signin_button_background_color">#2ABBFE</color>
+    <color name="signin_button_pressed_color">#6ACFFE</color>
+    <color name="fb_button_background_color">#2E4487</color>
+    <color name="fb_layout_pressed_color">#6D7CAB</color>
+    <color name="gmail_button_background_color">#D4342B</color>
+    <color name="gmail_layout_pressed_color">#DD5D55</color>
+    <color name="not_yet_registered_color">#B8B7BE</color>
+
+</resources>

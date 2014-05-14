@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/body_bg_color"
     android:orientation="vertical" >
 
     <RelativeLayout
@@ -30,14 +31,18 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/input_text_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/signin_layoutmargin" >
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:layout_margin="@dimen/signin_layoutmargin"
+        android:orientation="vertical" >
 
         <RelativeLayout
             android:id="@+id/emailfield_row"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:gravity="center_vertical" >
 
             <ImageView
@@ -53,13 +58,15 @@
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/email_icon"
                 android:background="@android:color/transparent"
-                android:hint="Email" />
+                android:hint="Email"
+                android:paddingLeft="10dp" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/passwordfield_row"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:gravity="center_vertical" >
 
             <ImageView
@@ -76,11 +83,127 @@
                 android:layout_toRightOf="@+id/password_icon"
                 android:background="@android:color/transparent"
                 android:hint="Password"
+                android:paddingLeft="10dp"
                 android:password="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/password_field"
+                android:src="@drawable/ic_help" />
         </RelativeLayout>
-        
-        
-     
+
+        <Button
+            style="@style/btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/signin_btn_height"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/signin_btn_selecton"
+            android:text="@string/signin_btn_string" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="@string/signin_using"
+            android:textSize="@dimen/signin_btn_textsize"
+            android:textStyle="bold" />
     </LinearLayout>
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input_text_layout"
+        android:layout_marginLeft="@dimen/signin_layoutmargin"
+        android:layout_marginRight="@dimen/signin_layoutmargin"
+        android:orientation="horizontal"
+        android:weightSum="2.0" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/signin_btn_height"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1.0"
+            android:background="@drawable/fb_layout_selection"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_facebook" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Facebook"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/signin_btn_textsize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/signin_btn_height"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1.0"
+            android:background="@drawable/gmail_layout_selection"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_google" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Google"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/signin_btn_textsize" >
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="2.0" 
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/notyetrgistertxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1.0"
+            android:text="Not yet Regstered?"
+            android:textColor="@color/not_yet_registered_color"
+            android:textSize="@dimen/signin_btn_textsize"
+            android:gravity="right" >
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/notyetrgistertxt"
+            android:layout_weight="1.0"
+            android:text="Sign Up"
+            android:textSize="@dimen/signin_btn_textsize"
+            android:textStyle="bold"
+            android:gravity="left" >
+        </TextView>
+    </LinearLayout>
+
+</RelativeLayout>
