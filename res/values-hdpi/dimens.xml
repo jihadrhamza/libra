@@ -4,11 +4,11 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <!-- SignIn Screen -->
-    <dimen name="signin_header_height">30dp</dimen>
+    <dimen name="signin_header_height">50dp</dimen>
     <dimen name="signin_header_textsize">16dp</dimen>
     <dimen name="signin_header_padding">10dp</dimen>
     <dimen name="signin_layoutmargin">15dp</dimen>
     <dimen name="signin_btn_textsize">16dp</dimen>
-    <dimen name="signin_btn_height">30dp</dimen>
+    <dimen name="signin_btn_height">40dp</dimen>
 
 </resources>
