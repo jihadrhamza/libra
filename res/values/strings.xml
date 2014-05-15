@@ -14,6 +14,9 @@
     <string name="signup_header_title">Sign Up</string>
     <string name="signup_btn_string">SIGN UP</string>
      <string name="termsservicehint">By clicking Register you are indicating that you have read and agree to the  </string>
-    <string name="app_id">763387943681741</string>
+   <!--  <string name="app_id">763387943681741</string>
+     -->
+     <string name="app_id">878845445478343</string>
+    
 
 </resources>
