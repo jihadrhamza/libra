@@ -8,5 +8,7 @@
     <dimen name="signin_header_textsize">16dp</dimen>
     <dimen name="signin_header_padding">10dp</dimen>
     <dimen name="signin_layoutmargin">15dp</dimen>
+    <dimen name="signin_btn_textsize">16dp</dimen>
+    <dimen name="signin_btn_height">30dp</dimen>
 
 </resources>
