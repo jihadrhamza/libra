@@ -33,7 +33,7 @@ public class SplashActivity extends Activity {
 
 			}
 
-		}, 3000);
+		}, 13000);
 
 	}
 }

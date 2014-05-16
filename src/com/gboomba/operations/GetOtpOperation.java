@@ -8,22 +8,21 @@ import org.json.JSONObject;
 import android.util.Log;
 
 import com.gboomba.Utils;
-import com.gboomba.entities.Profile;
 import com.networking.NetworkEngine;
 import com.networking.NetworkEngine.HttpMethod;
 import com.networking.NetworkOperation;
 
-public class SignInOperation extends NetworkOperation {
+public class GetOtpOperation extends NetworkOperation {
 
 	private static String TAG = SignInOperation.class.getName();
 
-	public interface SignInOperationListener {
-		void onSignInServiceFinished();
+	public interface GetOtpInOperationListener {
+		void onGetOtpServiceFinished(String message);
 
-		void onSignInServiceFailed(String error);
+		void onGetOtpServiceFailed(String error);
 	}
 
-	public SignInOperation(String userEmail, String password, String url) {
+	public GetOtpOperation(String mobileNumber, String url) {
 		super(url, null, HttpMethod.POST);
 		HashMap<String, String> headers = new HashMap<String, String>();
 		headers.put("Content-Type", "application/json");
@@ -32,8 +31,7 @@ public class SignInOperation extends NetworkOperation {
 		setJSONStringForPost(true);
 		final JSONObject jsonObject = new JSONObject();
 		try {
-			jsonObject.put("UserName", userEmail);
-			jsonObject.put("Password", password);
+			jsonObject.put("MobileNumber", mobileNumber);
 
 		} catch (JSONException e) {
 			return;
@@ -45,7 +43,7 @@ public class SignInOperation extends NetworkOperation {
 
 	}
 
-	public void doSignIn(final SignInOperationListener listener) {
+	public void getOTP(final GetOtpInOperationListener listener) {
 		setListener(new OperationListener() {
 
 			@Override
@@ -58,20 +56,17 @@ public class SignInOperation extends NetworkOperation {
 				try {
 					Utils.displayLogs(TAG, "" + operation.getResponseString());
 					JSONObject signUpResponse = new JSONObject(operation.getResponseString());
-					JSONObject responseHeader	=	signUpResponse.optJSONObject("responseHeader");
+					JSONObject responseHeader = signUpResponse.optJSONObject("responseHeader");
 					if (responseHeader.getString("Code").compareTo("0") == 0) {
-						new Profile().parse(signUpResponse.optJSONObject("userProfile"));
-					}else{
-						listener.onSignInServiceFailed(responseHeader.getString("Message"));
+						listener.onGetOtpServiceFinished(responseHeader.getString("Message"));
+					}else if(responseHeader.getString("Code").compareTo("1") == 0){
+						listener.onGetOtpServiceFinished(responseHeader.getString("Message"));
 					}
-					
-					
-					listener.onSignInServiceFinished();
 				} catch (JSONException e) {
 					e.printStackTrace();
-					listener.onSignInServiceFailed("");
+
 				} catch (Exception e) {
-					listener.onSignInServiceFailed("");
+
 					e.printStackTrace();
 				}
 			}

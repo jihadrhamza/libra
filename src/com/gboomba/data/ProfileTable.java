@@ -7,7 +7,7 @@ public class ProfileTable {
 	public static final String TABLE_PROFILE = "profile";
 	public static final String COLUMN_EMAIL_ADDRESS = "EmailAddress";
 	public static final String COLUMN_MOBILE_NUMBER = "MobileNumber";
-	public static final String COLUMN_USERID = "UserId";
+	public static final String COLUMN_USERID = "UserID";
 
 	public static String TAG = AppSqliteHelper.class.getName();
 
