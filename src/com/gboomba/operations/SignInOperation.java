@@ -32,7 +32,7 @@ public class SignInOperation extends NetworkOperation {
 		setJSONStringForPost(true);
 		final JSONObject jsonObject = new JSONObject();
 		try {
-			jsonObject.put("Email", userEmail);
+			jsonObject.put("UserName", userEmail);
 			jsonObject.put("Password", password);
 
 		} catch (JSONException e) {
@@ -61,12 +61,13 @@ public class SignInOperation extends NetworkOperation {
 					JSONObject responseHeader	=	signUpResponse.optJSONObject("responseHeader");
 					if (responseHeader.getString("Code").compareTo("0") == 0) {
 						new Profile().parse(signUpResponse.optJSONObject("userProfile"));
+						
+						
+						listener.onSignInServiceFinished();
 					}else{
-						listener.onSignInServiceFailed("");
+						listener.onSignInServiceFailed(responseHeader.getString("Message"));
 					}
-					
-					
-					listener.onSignInServiceFinished();
+				
 				} catch (JSONException e) {
 					e.printStackTrace();
 					listener.onSignInServiceFailed("");

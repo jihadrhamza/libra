@@ -37,7 +37,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/header"
         android:layout_margin="@dimen/signin_layoutmargin"
-        android:orientation="vertical" >
+        android:orientation="vertical" 
+        >
 
         <RelativeLayout
             android:id="@+id/emailfield_row"
@@ -59,8 +60,19 @@
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/email_icon"
                 android:background="@android:color/transparent"
-                android:hint="Email"
-                android:paddingLeft="10dp" />
+                android:hint="Email or Phone Number"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:typeface="sans" />
+            <ImageView 
+                android:id="@+id/email_row_border"
+                android:layout_below="@+id/email_field"
+                android:src="@drawable/border_form_elements"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+               />
         </RelativeLayout>
 
         <RelativeLayout
@@ -85,9 +97,21 @@
                 android:background="@android:color/transparent"
                 android:hint="Password"
                 android:paddingLeft="10dp"
-                android:password="true" />
+                android:password="true"
+                android:singleLine="true"
+                android:typeface="sans" />
+            
+            <ImageView 
+                android:id="@+id/password_row_border"
+                android:layout_below="@+id/password_field"
+                android:src="@drawable/border_form_elements"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+               />
 
             <ImageView
+                android:id="@+id/forgotPasswordIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -96,6 +120,7 @@
         </RelativeLayout>
 
         <Button
+            android:id="@+id/signInButton"
             style="@style/btn"
             android:layout_width="match_parent"
             android:layout_height="@dimen/signin_btn_height"
@@ -150,6 +175,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/google_layout"
             android:layout_width="0dp"
             android:layout_height="@dimen/signin_btn_height"
             android:layout_marginLeft="5dp"
@@ -191,21 +217,25 @@
             android:layout_marginLeft="5dp"
             android:layout_weight="1.0"
             android:gravity="right"
-            android:text="Not yet Regstered?"
+            android:text="Need an account? "
             android:textColor="@color/not_yet_registered_color"
-            android:textSize="@dimen/signin_btn_textsize" >
+            android:textSize="@dimen/signin_btn_textsize"
+            android:typeface="sans" >
         </TextView>
 
         <TextView
+            android:id="@+id/signup_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@+id/notyetrgistertxt"
             android:layout_weight="1.0"
+            android:clickable="true"
             android:gravity="left"
             android:text="Sign Up"
             android:textSize="@dimen/signin_btn_textsize"
-            android:textStyle="bold" >
+            android:textStyle="bold"
+             android:typeface="sans" >
         </TextView>
     </LinearLayout>
 
@@ -218,3 +248,4 @@
         facebook:fetch_user_info="true" />
 
 </RelativeLayout>
+

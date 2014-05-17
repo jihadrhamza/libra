@@ -2,6 +2,7 @@ package com.gboomba;
 
 import android.app.Application;
 
+import com.gboomba.data.AppSqliteHelper;
 import com.networking.NetworkEngine;
 
 public class GboombaEx extends Application {
@@ -11,6 +12,7 @@ public class GboombaEx extends Application {
 	public void onCreate() {
 		super.onCreate();
 		NetworkEngine.getInstance().init(this);
-		NetworkEngine.getInstance().setUseCache(true);
+		//NetworkEngine.getInstance().setUseCache(true);
+		AppSqliteHelper.getInstance(this);
 	}
 }

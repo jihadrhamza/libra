@@ -9,14 +9,34 @@
     <string name="signin_header_title">Sign In</string>
     <string name="signin_btn_string">SIGN IN</string>
     <string name="signin_using">or sign in using</string>
+    <string name="email_blank">Email/Phone Number  cannot be blank!</string>
+    <string name="password_blank">Password cannot be blank!</string>
+    <string name="SignIn">Please wait Signing in...</string>
 
     <!-- SIGNUP SCREEN -->
     <string name="signup_header_title">Sign Up</string>
     <string name="signup_btn_string">SIGN UP</string>
-     <string name="termsservicehint">By clicking Register you are indicating that you have read and agree to the  </string>
-   <!--  <string name="app_id">763387943681741</string>
-     -->
-     <string name="app_id">878845445478343</string>
+    <string name="termsservicehint">By creating your account, you confirm that you\'ve read and accept the <b>Terms of Use</b></string>
+    <string name="fill_mandatory_details">Please fill all the mandatory details.</string>
+    <string name="preceding_white_spaces">Preceding white spaces are not allowed.</string>
+     <string name="invalid_email_phonenumber">Email address/Phone Number is invalid. Please provide a valid email or password!</string>
+   
     
+    <string name="invalid_email_address">Email address is invalid. Please provide a valid email address.</string>
+     <string name="invalid_mobile_number">Phone Number is invalid. Please provide a valid Phone Number!</string>
+    <string name="SignUp">Please wait Signing up...</string>
+    <!-- <string name="app_id">763387943681741</string> -->
+    <string name="app_id">878845445478343</string>
+
+    <!-- Forgot Password -->
+    <string name="forgotpassword_header_title">Forgot Password</string>
+    <string name="getotp_btn_string">GET OTP</string>
+    <string name="mobile_blank">Mobile Number cannot be blank!</string>
+
+    <!-- Reset Password -->
+    <string name="resetpassword_header_title">Reset Password</string>
+    <string name="resetpassword_btn_string">RESET PASSWORD</string>
+    
+    <string name="please_wait">Please wait ...</string>
 
 </resources>

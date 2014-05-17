@@ -36,4 +36,10 @@ public class SplashActivity extends Activity {
 		}, 3000);
 
 	}
+	
+	protected void onPause() {
+		super.onPause();
+		this.overridePendingTransition(R.anim.pop_enter, R.anim.pop_exit);
+
+	}
 }
