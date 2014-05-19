@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+     <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/signin_header_height"
+        android:background="@drawable/tab_bg_repeatx"
+        android:padding="@dimen/signin_header_padding" >
+
+        <ImageView
+            android:id="@+id/backNavigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/ic_tab_back" />
+
+        <TextView
+            android:id="@+id/headet_title_txtview"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/terms_of_use"
+            android:textSize="@dimen/signin_header_textsize" />
+
+        <ImageView
+            android:id="@+id/header_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_tab_gboomba" />
+    </RelativeLayout>
+<WebView 
+    android:id="@+id/webview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+</LinearLayout>

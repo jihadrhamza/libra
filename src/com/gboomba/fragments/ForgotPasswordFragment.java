@@ -123,7 +123,7 @@ public class ForgotPasswordFragment extends Fragment implements
 
 	@Override
 	public void onGetOtpServiceFinished(String message) {
-		if(mProgressDialog!=null&&!mProgressDialog.isShowing())
+		if(mProgressDialog!=null&&mProgressDialog.isShowing())
 			mProgressDialog.dismiss();
 		Toast.makeText(getActivity(), message, 1000).show();
 		switchToResetPasswordScreen();
@@ -131,7 +131,7 @@ public class ForgotPasswordFragment extends Fragment implements
 
 	@Override
 	public void onGetOtpServiceFailed(String error) {
-		if(mProgressDialog!=null&&!mProgressDialog.isShowing())
+		if(mProgressDialog!=null&&mProgressDialog.isShowing())
 			mProgressDialog.dismiss();
 		Toast.makeText(getActivity(), error, 1000).show();
 	}
